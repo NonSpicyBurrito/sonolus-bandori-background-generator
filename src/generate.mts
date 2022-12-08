@@ -1,7 +1,7 @@
 import sharp from 'sharp'
 import { BackgroundResources } from './resources/background.mjs'
 import { MiscResources } from './resources/misc.mjs'
-import { servers } from './utils/servers.mjs'
+import { localizations, servers } from './utils/servers.mjs'
 
 export const generate = async (
     background: BackgroundResources,
@@ -29,7 +29,7 @@ export const generate = async (
 
 const getInfo = (texts: string[], packageName: string, packageVersion: string) => ({
     version: 2,
-    title: Object.fromEntries(servers.map((server, i) => [server, texts[i]])),
+    title: Object.fromEntries(servers.map((_, i) => [localizations[i], texts[i]])),
     subtitle: {
         en: 'BanG Dream! Girls Band Party!',
         ja: 'バンドリ！ ガールズバンドパーティ！',
