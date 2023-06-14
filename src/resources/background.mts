@@ -11,7 +11,7 @@ export const getBackgroundResources = async (id: string, server: Server, texts: 
     console.log('Fetching assets...')
     const bgImage = await fetchImage(
         `/assets/${server}/ingameskin/bgskin/skin${id}_rip/liveBG.png`,
-        `/assets/${server}/ingameskin/bgskin/skin${id}_rip/liveBG_normal.png`
+        `/assets/${server}/ingameskin/bgskin/skin${id}_rip/liveBG_normal.png`,
     )
 
     return {

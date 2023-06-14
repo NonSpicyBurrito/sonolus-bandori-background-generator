@@ -20,7 +20,7 @@ for (const background of resources.backgrounds) {
         background,
         resources.misc,
         packageName,
-        packageVersion
+        packageVersion,
     )
 
     fs.outputJsonSync(`output/${name}/info.json`, info, { spaces: 4 })
