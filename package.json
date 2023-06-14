@@ -15,7 +15,6 @@
     "sonolus-core": "^6.0.0"
   },
   "devDependencies": {
-    "@tsconfig/node16": "^1.0.3",
     "@types/fs-extra": "^9.0.13",
     "@types/node": "^16.18.3",
     "@types/sharp": "^0.31.0",
