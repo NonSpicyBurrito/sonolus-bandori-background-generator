@@ -12,6 +12,7 @@ export const getMiscResources = async () => {
     })
 
     const configuration = await compress<BackgroundConfiguration>({
+        scope: 'Bandori',
         blur: 0,
         mask: '#0006',
     })
