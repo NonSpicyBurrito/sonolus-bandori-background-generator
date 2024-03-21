@@ -9,7 +9,7 @@ export const getCatalog = async () => {
 
     console.log('Fetching asset info...')
     const assets = await Promise.all(
-        servers.map((server) => fetchJson(`/api/explorer/${server}/assets/_info.json`))
+        servers.map((server) => fetchJson(`/api/explorer/${server}/assets/_info.json`)),
     )
 
     console.log('Fetching names...')
@@ -22,15 +22,15 @@ export const getCatalog = async () => {
                     Object.keys(asset.ingameskin.bgskin)
                         .filter((name) => name.startsWith('skin'))
                         .filter((name) => !name.endsWith('preview'))
-                        .filter((name) => name !== 'skin_teamlivefestival')
+                        .filter((name) => name !== 'skin_teamlivefestival'),
                 )
                 .reduce(
                     (all, names, index) => ({
                         ...Object.fromEntries(names.map((name) => [name.slice(4), servers[index]])),
                         ...all,
                     }),
-                    {} as Record<string, Server>
-                )
+                    {} as Record<string, Server>,
+                ),
         ).map(([id, server]) => ({ id, server, texts: getTexts(backgroundInfo, id) })),
     }
 }
@@ -44,7 +44,7 @@ const getTexts = (info: Info, id: string) => {
     if (!skin) return servers.map(() => fallback)
 
     return servers.map(
-        (_, i) => skin.skinName[i] || skin.skinName.filter((name) => !!name)[0] || fallback
+        (_, i) => skin.skinName[i] || skin.skinName.filter((name) => !!name)[0] || fallback,
     )
 }
 

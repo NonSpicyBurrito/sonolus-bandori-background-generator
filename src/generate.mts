@@ -7,7 +7,7 @@ export const generate = async (
     background: BackgroundResources,
     misc: MiscResources,
     packageName: string,
-    packageVersion: string
+    packageVersion: string,
 ) => {
     const name = `bandori-live-${background.name}`
     console.log('Generating', name, 'resources...')
