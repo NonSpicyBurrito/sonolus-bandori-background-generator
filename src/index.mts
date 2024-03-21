@@ -16,14 +16,14 @@ const catalog = await getCatalog()
 const resources = await getResources(catalog)
 
 for (const background of resources.backgrounds) {
-    const { name, info, data, configuration, image, thumbnail } = await generate(
+    const { name, item, data, configuration, image, thumbnail } = await generate(
         background,
         resources.misc,
         packageName,
         packageVersion,
     )
 
-    fs.outputJsonSync(`output/${name}/info.json`, info, { spaces: 4 })
+    fs.outputJsonSync(`output/${name}/item.json`, item, { spaces: 4 })
     fs.outputFileSync(`output/${name}/data`, data)
     fs.outputFileSync(`output/${name}/configuration`, configuration)
     await image.toFile(`output/${name}/image.png`)
