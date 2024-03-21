@@ -1,4 +1,3 @@
-import fetch from 'node-fetch'
 import sharp from 'sharp'
 
 export const fetchImage = async (path: string, fallback: string) => {
